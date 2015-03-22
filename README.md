@@ -1,3 +1,3 @@
 # Destructuring for Dart
 
-[Proposal]()
+[Proposal](https://github.com/DirectMyFile/dep-destructuring/blob/master/proposal.md)
