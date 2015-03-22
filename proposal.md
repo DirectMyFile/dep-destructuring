@@ -3,7 +3,9 @@
 ## Contact information
 
 **Name**: Kenneth A. Endfinger
+
 **Email**: kaendfinger@gmail.com
+
 **GitHub Username**: kaendfinger
 
 [Proposal Location](https://github.com/DirectMyFile/dep-destructuring)
