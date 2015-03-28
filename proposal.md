@@ -23,6 +23,22 @@ Problems to solve:
 
 ## Examples
 
+### Property Destructuring
+
+```dart
+class Point {
+  final int x;
+  final int y;
+
+  Point(this.x, this.y);
+}
+
+var {x, y} = new Point(5, 1);
+
+assert(x == 5);
+assert(y == 1);
+```
+
 ### Map Destructuring
 
 ```dart
@@ -72,8 +88,6 @@ target.{a, b} = [1, 2];
 ## Proposal
 
 Destructuring should be allowed in any kind of assignment. Identifiers should be separated by a `,` with optional whitespace. As always, the value on the right should be evaluated, and the values should be assigned to the respective variables left to right.
-
-The right side of the assignment can be an instance of `List` or `Map`.
 
 ### Current Syntax Equivalent
 
@@ -139,7 +153,7 @@ var x, y = [1, 2];
 
 ## Implications and limitations
 
-- The value of the assignment must be a list or a map. This is due to the ambiguity of whether to map the variables to a numeric index or to a string index. This could be solved in the future by having 2 syntax options, one with `[]` as the enclosing syntax for the identifiers, which always gets the values with a numeric index, and one with `{}` as the enclosing syntax, which always gets the value using a string index.
+**TODO**
 
 ## Deliverables
 
