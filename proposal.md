@@ -174,7 +174,13 @@ var x, y = [1, 2];
 
 ## Implications and limitations
 
-**TODO**
+- This must also work in for-in loops:
+
+```dart
+for(var {a, b} in pairs) {
+  print("$a:$b");
+}
+```
 
 ## Deliverables
 
