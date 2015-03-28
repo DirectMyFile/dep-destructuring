@@ -123,7 +123,7 @@ var x, y = [1, 2];
 
 ### A working implementation
 
-No working implementation is available, although one can experience this in practice by using languages that have this feature already.
+No working implementation is available, although one can experience this syntax in practice by using languages that have this feature already.
 
 ### Tests
 
