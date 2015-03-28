@@ -137,6 +137,23 @@ String a = tmp["a"];
 int b = tmp["b"];
 ```
 
+```dart
+class Point {
+  final int x;
+  final int y;
+
+  Point(this.x, this.y);
+}
+
+/// With this Proposal
+var {x, y} = new Point(5, 1);
+
+/// Without this Proposal
+var tmp = new Point(5, 1);
+var x = tmp.x;
+var y = tmp.y;
+```
+
 ## Alternatives
 
 ### Syntax
