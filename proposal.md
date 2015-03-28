@@ -64,6 +64,8 @@ target.{a, b} = [1, 2];
 
 Destructuring should be allowed in any kind of assignment. Identifiers should be separated by a `,` with optional whitespace. As always, the value on the right should be evaluated, and the values should be assigned to the respective variables left to right.
 
+The right side of the assignment can be an instance of `List` or `Map`.
+
 ### Current Syntax Equivalent
 
 The behavior of the destructuring should be equivalent to the given code that does not use this proposal's syntax.
@@ -111,7 +113,7 @@ var x, y = [1, 2];
 
 ## Implications and limitations
 
-**TODO**
+- The value of the assignment must be a list or a map. This is due to the ambiguity of whether to map the variables to a numeric index or to a string index. This could be solved in the future by having 2 syntax options, one with `[]` as the enclosing syntax for the identifiers, which always gets the values with a numeric index, and one with `{}` as the enclosing syntax, which always gets the value using a string index.
 
 ## Deliverables
 
@@ -121,7 +123,7 @@ var x, y = [1, 2];
 
 ### A working implementation
 
-**TODO**
+No working implementation is available, although one can experience this in practice by using languages that have this feature already.
 
 ### Tests
 
