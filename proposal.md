@@ -41,10 +41,14 @@ assert(y == 1);
 
 ### Map Destructuring
 
+Map Destructuring uses symbols to help minification.
+
+**TODO**: Consider if this is even necessary, and if not, remove it.
+
 ```dart
 var {x, y} = {
-  "x": 5,
-  "y": 2
+  #x: 5,
+  #y: 2
 };
 
 assert(x == 5);
@@ -54,7 +58,7 @@ assert(y == 2);
 ### List Destructuring
 
 ```dart
-var {x, y} = [5, 2];
+var [x, y] = [5, 2];
 
 assert(x == 5);
 assert(y == 2);
@@ -63,8 +67,8 @@ assert(y == 2);
 ### Value Swapping
 
 ```dart
-var {a, b} = [1, 2];
-{a, b} = [b, a];
+var [a, b] = [1, 2];
+[a, b] = [b, a];
 
 assert(a == 2);
 assert(b == 1);
@@ -73,7 +77,7 @@ assert(b == 1);
 ### With Typing
 
 ```dart
-var {a: String, b: int} = ["Hello World", 5];
+var [String a, int b] = ["Hello World", 5];
 
 assert(a == "Hello World");
 assert(b == 5);
@@ -82,7 +86,7 @@ assert(b == 5);
 ### Usage with Access
 
 ```dart
-target.{a, b} = [1, 2];
+target.[a, b] = [1, 2];
 ```
 
 ## Proposal
@@ -95,7 +99,7 @@ The behavior of the destructuring should be equivalent to the given code that do
 
 ```dart
 /// With this Proposal
-var {a, b} = [1, 2];
+var [a, b] = [1, 2];
 
 /// Without this Proposal
 var tmp = [1, 2];
@@ -106,35 +110,35 @@ var b = tmp[1];
 ```dart
 /// With this Proposal
 var {a, b} = {
-  "a": 1,
-  "b": 2
+  #a: 1,
+  #b: 2
 };
 
 /// Without this Proposal
 var tmp = {
-  "a": 1,
-  "b": 2
+  #a: 1,
+  #b: 2
 };
 
-var a = tmp["a"];
-var b = tmp["b"];
+var a = tmp[#a];
+var b = tmp[#b];
 ```
 
 ```dart
 /// With this Proposal
-var {a: String, b: int} = {
-  "a": "Hello World",
-  "b": 5
+var {String, int b} = {
+  #a: "Hello World",
+  #b: 5
 };
 
 /// Without this Proposal
 var tmp = {
-  "a": "Hello World",
-  "b": 5
+  #a: "Hello World",
+  #b: 5
 };
 
-String a = tmp["a"];
-int b = tmp["b"];
+String a = tmp[#a];
+int b = tmp[#b];
 ```
 
 ```dart
@@ -188,10 +192,10 @@ No working implementation is available, although one can experience this syntax 
 
 ## Patents rights
 
-TC52, the Ecma technical committee working on evolving the open [Dart standard][], operates under a royalty-free patent policy, [RFPP][] (PDF). This means if the proposal graduates to being sent to TC52, you will have to sign the Ecma TC52 [external contributer form][] and submit it to Ecma.
+TC52, the Ecma technical committee working on evolving the open [Dart standard][], operates under a royalty-free patent policy, [RFPP][] (PDF). This means if the proposal graduates to being sent to TC52, you will have to sign the Ecma TC52 [external contributor form][] and submit it to Ecma.
 
 [tex]: http://www.latex-project.org/
 [language spec]: https://www.dartlang.org/docs/spec/
 [dart standard]: http://www.ecma-international.org/publications/standards/Ecma-408.htm
 [rfpp]: http://www.ecma-international.org/memento/TC52%20policy/Ecma%20Experimental%20TC52%20Royalty-Free%20Patent%20Policy.pdf
-[external contributer form]: http://www.ecma-international.org/memento/TC52%20policy/Contribution%20form%20to%20TC52%20Royalty%20Free%20Task%20Group%20as%20a%20non-member.pdf
+[external contributor form]: http://www.ecma-international.org/memento/TC52%20policy/Contribution%20form%20to%20TC52%20Royalty%20Free%20Task%20Group%20as%20a%20non-member.pdf
