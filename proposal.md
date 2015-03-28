@@ -39,22 +39,6 @@ assert(x == 5);
 assert(y == 1);
 ```
 
-### Map Destructuring
-
-Map Destructuring uses symbols to help minification.
-
-**TODO**: Consider if this is even necessary, and if not, remove it.
-
-```dart
-var {x, y} = {
-  #x: 5,
-  #y: 2
-};
-
-assert(x == 5);
-assert(y == 2);
-```
-
 ### List Destructuring
 
 ```dart
@@ -109,36 +93,13 @@ var b = tmp[1];
 
 ```dart
 /// With this Proposal
-var {a, b} = {
-  #a: 1,
-  #b: 2
-};
+var [String, int b] = ["Hello", 5];
 
 /// Without this Proposal
-var tmp = {
-  #a: 1,
-  #b: 2
-};
+var tmp = ["Hello", 5];
 
-var a = tmp[#a];
-var b = tmp[#b];
-```
-
-```dart
-/// With this Proposal
-var {String, int b} = {
-  #a: "Hello World",
-  #b: 5
-};
-
-/// Without this Proposal
-var tmp = {
-  #a: "Hello World",
-  #b: 5
-};
-
-String a = tmp[#a];
-int b = tmp[#b];
+String a = tmp[0];
+int b = tmp[1];
 ```
 
 ```dart
@@ -156,6 +117,23 @@ var {x, y} = new Point(5, 1);
 var tmp = new Point(5, 1);
 var x = tmp.x;
 var y = tmp.y;
+```
+
+```dart
+class Point {
+  final int x;
+  final int y;
+
+  Point(this.x, this.y);
+}
+
+/// With this Proposal
+var {int x, int y} = new Point(5, 1);
+
+/// Without this Proposal
+var tmp = new Point(5, 1);
+int x = tmp.x;
+int y = tmp.y;
 ```
 
 ## Alternatives
