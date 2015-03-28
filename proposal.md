@@ -54,6 +54,15 @@ assert(a == 2);
 assert(b == 1);
 ```
 
+### With Typing
+
+```dart
+var {a: String, b: int} = ["Hello World", 5];
+
+assert(a == "Hello World");
+assert(b == 5);
+```
+
 ### Usage with Access
 
 ```dart
@@ -95,6 +104,23 @@ var tmp = {
 
 var a = tmp["a"];
 var b = tmp["b"];
+```
+
+```dart
+/// With this Proposal
+var {a: String, b: int} = {
+  "a": "Hello World",
+  "b": 5
+};
+
+/// Without this Proposal
+var tmp = {
+  "a": "Hello World",
+  "b": 5
+};
+
+String a = tmp["a"];
+int b = tmp["b"];
 ```
 
 ## Alternatives
