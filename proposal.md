@@ -75,7 +75,23 @@ target.[a, b] = [1, 2];
 
 ## Proposal
 
-Destructuring should be allowed in any kind of assignment. Identifiers should be separated by a `,` with optional whitespace. As always, the value on the right should be evaluated, and the values should be assigned to the respective variables left to right.
+Destructuring should be allowed in any kind of assignment. Identifiers should be separated by a `,` with optional whitespace.
+
+### Semantics
+
+The following is what should happen when evaluating a destructuring assignment.
+
+The value on the right should be evaluated, and the values should be assigned to the respective variables left to right.
+
+The result of the expression should always be the right hand side of the expression.
+
+#### Property Destructuring
+
+It is a static warning if an variable identifier does not correspond to a property of the right hand side, unless the right hand side is marked as a proxy.
+
+#### List Destructuring
+
+It is a runtime error if the number of identifiers on the left hand side is out of range of the right hand side list.
 
 ### Current Syntax Equivalent
 
@@ -164,7 +180,7 @@ for(var {a, b} in pairs) {
 
 ### Language specification changes
 
-**TODO**
+The changes described above should be incorporated into the specification.
 
 ### A working implementation
 
