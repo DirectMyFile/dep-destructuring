@@ -89,6 +89,8 @@ The result of the expression should always be the right hand side of the express
 
 It is a static warning if an variable identifier does not correspond to a property of the right hand side, unless the right hand side is marked as a proxy.
 
+Ordering of the identifiers does not affect the outcome of the assignment. For instance: `{a, b} = value` is the same as `{b, a} = value`.
+
 #### List Destructuring
 
 It is a runtime error if the number of identifiers on the left hand side is out of range of the right hand side list.
