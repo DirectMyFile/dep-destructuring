@@ -93,7 +93,7 @@ var b = tmp[1];
 
 ```dart
 /// With this Proposal
-var [String, int b] = ["Hello", 5];
+var [String a, int b] = ["Hello", 5];
 
 /// Without this Proposal
 var tmp = ["Hello", 5];
