@@ -188,6 +188,11 @@ for(var {a, b} in pairs) {
 }
 ```
 
+- Compound Assignments are allowed only in non-declarative assignments.
+  When compound assignment is used, the compound operator is applied to each variable like so:
+  For every variable `v`, the proper destructuring is done up until it is time to assign to the variable. Before this occurs, the compound operator is applied to the variable.
+  For example, `[a, b] |= [true, false]`, would evaluate and destructure the right hand side. The variables are then assigned like this, `a |= true`, `b |= false`.
+
 ## Deliverables
 
 ### Language specification changes
