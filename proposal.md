@@ -18,7 +18,7 @@ Allow values to be destructured on assignment.
 
 Problems to solve:
 
-- Assigning variables from large maps and lists can often be cumbersome and look rather ugly.
+- Assigning multiple variables from objects and lists can often be cumbersome and look rather ugly.
   One way to solve this is to allow developers to assign multiple variables in one go, in a simple and easy to understand manner.
 
 ## Examples
