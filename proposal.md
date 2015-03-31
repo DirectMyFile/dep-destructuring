@@ -158,12 +158,7 @@ int y = tmp.y;
 
 ### Syntax
 
-Alternative Syntax A:
-```dart
-var [x, y] = [1, 2];
-```
-
-Alternative Syntax B:
+Alternative Syntax for Destructuring:
 ```dart
 var x, y = [1, 2];
 ```
