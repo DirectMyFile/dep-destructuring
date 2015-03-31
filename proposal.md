@@ -91,9 +91,29 @@ It is a static warning if an variable identifier does not correspond to a proper
 
 Ordering of the identifiers does not affect the outcome of the assignment. For instance: `{a, b} = value` is the same as `{b, a} = value`.
 
+Starting with the first identifier, iterate through the identifiers with each identifier `i` and access the property on `right` with the name `i`.
+
+In other words:
+
+```dart
+for (var identifier in identifiers) {
+  variables.set(identifier, getField(right, identifier));
+}
+```
+
 #### List Destructuring
 
 It is a runtime error if the number of identifiers on the left hand side is out of range of the right hand side list.
+
+Starting with `i = 0`, for each identifier, assign the variable to `(right)[i]`, then increment `i` by 1.
+
+In other words:
+
+```dart
+for (var i = 0; i < identifiers.length; i++) {
+  variables.set(identifiers[i], right[i]);
+}
+```
 
 ### Current Syntax Equivalent
 
