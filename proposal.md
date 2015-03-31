@@ -176,12 +176,7 @@ int y = tmp.y;
 
 ## Alternatives
 
-### Syntax
-
-Alternative Syntax for Destructuring:
-```dart
-var x, y = [1, 2];
-```
+No alternatives have been proposed yet.
 
 ## Implications and limitations
 
